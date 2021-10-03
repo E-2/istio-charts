@@ -1,0 +1,12 @@
+# Default values for service-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+
+domains: []
+
+issues: le-staging
+
+secret:
+  name: ""
+  annotations: {}
