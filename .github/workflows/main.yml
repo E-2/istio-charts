@@ -29,7 +29,7 @@ jobs:
           curl -s -L https://get.helm.sh/helm-v3.7.0-linux-amd64.tar.gz | tar xfvz - --strip-components=1 linux-amd64/helm
           chmod 0700 helm
       - name: Running lint
-        run: ./helm lint --strict certificate-chart
+        run: ./helm lint --strict ingress-chart
       - name: Checkout gh pages
         uses: actions/checkout@v2
         with:
@@ -37,15 +37,15 @@ jobs:
           path: gh-pages
       - name: Pack chart
         run: |
-          ./helm package certificate-chart -d gh-pages
+          ./helm package ingress-chart -d gh-pages
           ./helm repo index --url https://${GITHUB_REPOSITORY%/*}.github.io/istio-charts/ gh-pages
           ( cd gh-pages && ./index.html.sh > index.html )
       - name: Render chart to yamls
         run: |
-          VERSION=$( grep certificate-chart/Chart.yaml -e '^version:' | awk '{ print $2 }' )
+          VERSION=$( grep ingress-chart/Chart.yaml -e '^version:' | awk '{ print $2 }' )
           mkdir -p gh-pages/yaml
           rm -rf gh-pages/yaml/${VERSION}
-          ./helm template certificate-chart --output-dir gh-pages/yaml/${VERSION}
+          ./helm template ingress-chart --output-dir gh-pages/yaml/${VERSION}
       - name: Show gh-pages changes
         run: |
           cd gh-pages

@@ -10,3 +10,12 @@ issues: le-staging
 secret:
   name: ""
   annotations: {}
+
+service:
+  name: ""
+  path: /
+  port: 80
+
+redirect:
+  from: []
+  to: ""
