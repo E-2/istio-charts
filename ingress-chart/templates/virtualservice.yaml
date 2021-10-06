@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-vs
 spec:
   gateways:
-    - {{.Values.name | default (printf "%s-gateway" .Release.Name) }}
+    - {{.Values.gateway.name | default (printf "%s-gateway" .Release.Name) }}
   hosts:
 {{ toYaml .Values.domains | indent 4 }}
 {{- if and (not (empty .Values.redirect.from)) (gt (len .Values.redirect.to) 0) }}

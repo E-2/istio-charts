@@ -1,7 +1,8 @@
+{{- if .Values.gateway.enabled }}
 apiVersion: networking.istio.io/v1beta1
 kind: Gateway
 metadata:
-  name: {{.Values.name | default (printf "%s-gateway" .Release.Name) }}
+  name: {{.Values.gateway.name | default (printf "%s-gateway" .Release.Name) }}
   namespace: {{.Release.Namespace}}
 spec:
   selector:
@@ -24,3 +25,4 @@ spec:
       httpsRedirect: true
     hosts:
     - '*'
+{{- end }}
