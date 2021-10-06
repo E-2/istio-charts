@@ -5,10 +5,10 @@
 
 domains: []
 
-issues: le-staging
 
 certificate:
   enable: false
+  issuer: le-staging
   secret:
     name: ""
     annotations: {}
