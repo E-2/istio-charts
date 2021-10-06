@@ -15,7 +15,7 @@ spec:
     - '*'
     tls:
       mode: SIMPLE # enables HTTPS on this port
-      credentialName: {{.Values.secret.name | default (printf "%s-tls" .Release.Name) }} # fetches certs from Kubernetes secret
+      credentialName: {{.Values.certificate.secret.name | default (printf "%s-tls" .Release.Name) }} # fetches certs from Kubernetes secret
   - port:
       number: 80
       name: http

@@ -7,9 +7,11 @@ domains: []
 
 issues: le-staging
 
-secret:
-  name: ""
-  annotations: {}
+certificate:
+  enable: false
+  secret:
+    name: ""
+    annotations: {}
 
 service:
   name: ""

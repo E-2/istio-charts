@@ -1,3 +1,4 @@
+{{- if .Values.certificate.enabled }}
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
@@ -5,11 +6,11 @@ metadata:
   namespace: {{.Release.Namespace}}
 spec:
   # Secret names are always required.
-  secretName: {{.Values.secret.name | default (printf "%s-tls" .Release.Name) }}
-{{- if not (empty .Values.secret.annotations) }}
+  secretName: {{.Values.certificate.secret.name | default (printf "%s-tls" .Release.Name) }}
+{{- if not (empty .Values.certificate.secret.annotations) }}
   secretTemplate:
     annotations:
-{{ .Values.secret.annotations | toYaml | indent 6 }}
+{{ .Values.certificate.secret.annotations | toYaml | indent 6 }}
 {{- end }}
   duration: 2160h # 90d
   renewBefore: 360h # 15d
@@ -33,3 +34,4 @@ spec:
     # We can reference ClusterIssuers by changing the kind here.
     # The default value is Issuer (i.e. a locally namespaced Issuer)
     kind: ClusterIssuer
+{{- end }}
