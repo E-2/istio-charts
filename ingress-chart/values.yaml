@@ -7,7 +7,7 @@ domains: []
 
 
 certificate:
-  enable: false
+  enabled: false
   issuer: le-staging
   secret:
     name: ""
