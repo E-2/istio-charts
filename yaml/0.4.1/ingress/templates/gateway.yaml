@@ -1,0 +1,28 @@
+---
+# Source: ingress/templates/gateway.yaml
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: RELEASE-NAME-gateway
+  namespace: default
+spec:
+  selector:
+    ingress: 
+  servers:
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    hosts:
+      - '*'
+    tls:
+      mode: SIMPLE # enables HTTPS on this port
+      credentialName: RELEASE-NAME-tls # fetches certs from Kubernetes secret
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    tls:
+      httpsRedirect: true
+    hosts:
+      - '*'
