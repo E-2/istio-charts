@@ -3,7 +3,7 @@ entries:
   certificate:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-10-06T18:50:15.687610543Z"
+    created: "2021-10-23T18:34:11.661300076Z"
     description: A Helm chart for Kubernetes
     digest: f7638d7247bc6e76836191ed61668ee4df1ac412ed33189bb58a51c0f81b4ca7
     name: certificate
@@ -13,16 +13,16 @@ entries:
     version: 0.1.0
   ingress:
   - apiVersion: v2
-    created: "2021-10-06T18:50:15.689402102Z"
+    created: "2021-10-23T18:34:11.662682021Z"
     description: A Helm chart for Kubernetes
-    digest: 1dd098d7459c4b39c163fd212b25da882a3509a4c6c7fed5b7409f085ae699b6
+    digest: 76787d5c08d5954b21b8c90367ffb6ea66242a2e10090ccd9f6b059edc775f2d
     name: ingress
     type: application
     urls:
     - https://E-2.github.io/istio-charts/ingress-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v2
-    created: "2021-10-06T18:50:15.688884285Z"
+    created: "2021-10-23T18:34:11.662186184Z"
     description: A Helm chart for Kubernetes
     digest: 7eb93bd59cf4907ba971800abc9e298a9ec099dc15fb6020725f01e0a601d836
     name: ingress
@@ -31,7 +31,7 @@ entries:
     - https://E-2.github.io/istio-charts/ingress-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v2
-    created: "2021-10-06T18:50:15.688165561Z"
+    created: "2021-10-23T18:34:11.661887783Z"
     description: A Helm chart for Kubernetes
     digest: c981292af727324845b429a19c2e8788077401a673ecea9fd423ade58cb9dd10
     name: ingress
@@ -40,7 +40,7 @@ entries:
     - https://E-2.github.io/istio-charts/ingress-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
-    created: "2021-10-06T18:50:15.687883752Z"
+    created: "2021-10-23T18:34:11.661602776Z"
     description: A Helm chart for Kubernetes
     digest: 274528036f99956e34834e26d1c151ada6008909c1305c8e045783e993e0adee
     name: ingress
@@ -48,4 +48,4 @@ entries:
     urls:
     - https://E-2.github.io/istio-charts/ingress-0.2.0.tgz
     version: 0.2.0
-generated: "2021-10-06T18:50:15.687144827Z"
+generated: "2021-10-23T18:34:11.660921101Z"
