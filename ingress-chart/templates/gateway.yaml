@@ -6,23 +6,23 @@ metadata:
   namespace: {{.Release.Namespace}}
 spec:
   selector:
-    ingress: ext
+    ingress: {{ .Values.controller }}
   servers:
   - port:
-      number: 443
+      number: {{.Values.gateway.https.port}}
       name: https
       protocol: HTTPS
     hosts:
-    - '*'
+{{ toYaml .Values.domains | indent 6}}
     tls:
       mode: SIMPLE # enables HTTPS on this port
       credentialName: {{.Values.certificate.secret.name | default (printf "%s-tls" .Release.Name) }} # fetches certs from Kubernetes secret
   - port:
-      number: 80
+      number: {{.Values.gateway.http.port}}
       name: http
       protocol: HTTP
     tls:
       httpsRedirect: true
     hosts:
-    - '*'
+{{ toYaml .Values.domains | indent 6}}
 {{- end }}

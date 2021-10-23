@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 
-domains: []
+domains: ['*']
 
 
 certificate:
@@ -16,6 +16,10 @@ certificate:
 gateway:
   enabled: true
   name: ""
+  https:
+    port: 443
+  http:
+    port: 80
 
 service:
   name: ""
